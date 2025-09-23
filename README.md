@@ -1,6 +1,5 @@
 # MiltOff1.github.io
 formatted page for architect powers
-<img src="https://r2cdn.perplexity.ai/pplx-full-logo-primary-dark%402x.png" style="height:64px;margin-right:32px"/>
 ### Стадия I: управляемый вакуумный коллапс
 
 Идея: целенаправленная метастабилизация/дестабилизация поля Хиггса и нуклеация истинного вакуума с направляемым фронтом, переписывающая физические константы в охваченной области вплоть до стирания вселенной.
