@@ -1,9 +1,12 @@
 markdown: kramdown
 kramdown:
+  parse_block_html: true
+  parse_span_html: true
   math_engine: mathjax
   syntax_highlighter: rouge
+  input: GFM
+  hard_wrap: false
 
 plugins:
   - jekyll-feed
   - jekyll-sitemap
-  - jekyll-remote-theme
