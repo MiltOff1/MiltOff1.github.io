@@ -1,0 +1,221 @@
+:root {
+  --bg-primary: #ffffff;
+  --bg-secondary: #f8fafc;
+  --bg-tertiary: #f1f5f9;
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --accent-primary: #2563eb;
+  --accent-secondary: #3b82f6;
+  --border-light: #e2e8f0;
+  --border-medium: #cbd5e1;
+  --formula-bg: #f8fafc;
+  --formula-border: #e2e8f0;
+  --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.1), 0 2px 4px -2px rgb(0 0 0 / 0.1);
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-primary: #0f172a;
+    --bg-secondary: #1e293b;
+    --bg-tertiary: #334155;
+    --text-primary: #f8fafc;
+    --text-secondary: #cbd5e1;
+    --text-muted: #94a3b8;
+    --accent-primary: #3b82f6;
+    --accent-secondary: #60a5fa;
+    --border-light: #334155;
+    --border-medium: #475569;
+    --formula-bg: #1e293b;
+    --formula-border: #334155;
+    --shadow-sm: 0 1px 2px 0 rgb(0 0 0 / 0.3);
+    --shadow-md: 0 4px 6px -1px rgb(0 0 0 / 0.3), 0 2px 4px -2px rgb(0 0 0 / 0.3);
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', sans-serif;
+  line-height: 1.7;
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 2rem 1.5rem;
+  font-size: 16px;
+  transition: background-color 0.2s, color 0.2s;
+}
+
+h1, h2, h3, h4 {
+  color: var(--text-primary);
+  font-weight: 600;
+  line-height: 1.3;
+  margin: 2.5rem 0 1rem 0;
+}
+
+h1 {
+  font-size: 2.5rem;
+  border-bottom: 2px solid var(--accent-primary);
+  padding-bottom: 0.5rem;
+  margin-bottom: 2rem;
+}
+
+h2 {
+  font-size: 1.875rem;
+  color: var(--accent-primary);
+}
+
+h3 {
+  font-size: 1.5rem;
+  color: var(--accent-secondary);
+  margin-top: 2rem;
+}
+
+h4 {
+  font-size: 1.25rem;
+  color: var(--text-secondary);
+}
+
+p {
+  margin: 1rem 0;
+  color: var(--text-secondary);
+}
+
+/* Современное оформление формул */
+.MathJax {
+  font-size: 1.1em !important;
+}
+
+.MathJax_Display {
+  background-color: var(--formula-bg) !important;
+  border: 1px solid var(--formula-border) !important;
+  border-radius: 12px !important;
+  padding: 1.5rem 2rem !important;
+  margin: 2rem 0 !important;
+  box-shadow: var(--shadow-sm) !important;
+  position: relative !important;
+  transition: all 0.2s ease !important;
+}
+
+.MathJax_Display:hover {
+  box-shadow: var(--shadow-md) !important;
+  border-color: var(--accent-primary) !important;
+}
+
+/* Блочные формулы */
+.MathJax[display="block"] {
+  background-color: var(--formula-bg);
+  border: 1px solid var(--formula-border);
+  border-radius: 12px;
+  padding: 1.5rem 2rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow-sm);
+  transition: all 0.2s ease;
+}
+
+.MathJax[display="block"]:hover {
+  box-shadow: var(--shadow-md);
+  border-color: var(--accent-primary);
+}
+
+/* Строчные формулы */
+.MathJax[display="inline"] {
+  background-color: var(--bg-tertiary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 6px;
+  border: 1px solid var(--border-light);
+  margin: 0 0.1rem;
+  font-size: 1.05em;
+}
+
+/* Разделители стадий */
+h3[id*="стадия"] {
+  background: linear-gradient(135deg, var(--accent-primary), var(--accent-secondary));
+  color: white;
+  padding: 1rem 1.5rem;
+  border-radius: 12px;
+  margin: 3rem 0 1.5rem 0;
+  box-shadow: var(--shadow-md);
+}
+
+/* Карточки для описаний */
+blockquote, 
+.idea-block,
+p:has(strong:contains("Идея")) {
+  background-color: var(--bg-secondary);
+  border-left: 4px solid var(--accent-primary);
+  padding: 1.25rem 1.5rem;
+  margin: 1.5rem 0;
+  border-radius: 0 8px 8px 0;
+  box-shadow: var(--shadow-sm);
+}
+
+/* Списки */
+ul, ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+li {
+  margin: 0.5rem 0;
+  color: var(--text-secondary);
+}
+
+/* Ссылки */
+a {
+  color: var(--accent-primary);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-bottom 0.2s;
+}
+
+a:hover {
+  border-bottom: 1px solid var(--accent-primary);
+}
+
+/* Код */
+code {
+  background-color: var(--bg-tertiary);
+  color: var(--text-primary);
+  padding: 0.2rem 0.5rem;
+  border-radius: 4px;
+  font-family: 'SF Mono', 'Monaco', 'Inconsolata', 'Roboto Mono', monospace;
+  font-size: 0.9em;
+}
+
+pre {
+  background-color: var(--bg-secondary);
+  border: 1px solid var(--border-light);
+  border-radius: 8px;
+  padding: 1rem;
+  overflow-x: auto;
+  margin: 1.5rem 0;
+}
+
+/* Адаптивность */
+@media (max-width: 768px) {
+  body {
+    padding: 1rem;
+    font-size: 15px;
+  }
+  
+  h1 {
+    font-size: 2rem;
+  }
+  
+  .MathJax_Display, .MathJax[display="block"] {
+    padding: 1rem !important;
+    margin: 1.5rem 0 !important;
+  }
+}
+
+/* Финальная формула — особое выделение */
+.MathJax:has(.boxed) {
+  background: linear-gradient(135deg, var(--formula-bg), var(--bg-tertiary)) !important;
+  border: 2px solid var(--accent-primary) !important;
+  box-shadow: var(--shadow-md) !important;
+}
