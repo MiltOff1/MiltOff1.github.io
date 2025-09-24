@@ -7,5 +7,3 @@ plugins:
   - jekyll-feed
   - jekyll-sitemap
   - jekyll-remote-theme
-
-remote_theme: pages-themes/minimal@v0.2.0
