@@ -10,8 +10,6 @@
   --accent-orange: #ff6b35;
   --accent-pink: #ff1b8d;
   --glow-cyan: rgba(0, 212, 255, 0.3);
-  --glow-purple: rgba(139, 92, 246, 0.3);
-  --glow-green: rgba(0, 255, 136, 0.3);
 }
 
 * {
@@ -37,9 +35,8 @@ body::before {
   width: 100%;
   height: 100%;
   background: 
-    radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.1) 0%, transparent 50%),
-    radial-gradient(circle at 40% 80%, rgba(0, 255, 136, 0.1) 0%, transparent 50%);
+    radial-gradient(circle at 20% 50%, rgba(0, 212, 255, 0.05) 0%, transparent 50%),
+    radial-gradient(circle at 80% 20%, rgba(139, 92, 246, 0.05) 0%, transparent 50%);
   z-index: -1;
   animation: backgroundPulse 10s ease-in-out infinite alternate;
 }
@@ -49,379 +46,193 @@ body::before {
   100% { opacity: 0.6; }
 }
 
-@keyframes gradientShift {
-  0%, 100% { background-position: 0% 50%; }
-  50% { background-position: 100% 50%; }
-}
-
-@keyframes glitch {
-  0%, 90%, 100% { transform: translate(0, 0); opacity: 0; }
-  95% { transform: translate(-2px, 2px); opacity: 0.8; }
-  97% { transform: translate(2px, -2px); opacity: 0.8; }
-}
-
-@keyframes slideInUp {
-  to {
-    opacity: 1;
-    transform: translateY(0);
-  }
-}
-
-@keyframes pulse {
-  0%, 100% { transform: translateY(-50%) scale(1); opacity: 1; }
-  50% { transform: translateY(-50%) scale(1.2); opacity: 0.7; }
-}
-
-@keyframes float {
-  0% {
-    transform: translateY(100vh) rotate(0deg);
-    opacity: 0;
-  }
-  10% { opacity: 1; }
-  90% { opacity: 1; }
-  100% {
-    transform: translateY(-100vh) rotate(360deg);
-    opacity: 0;
-  }
-}
-
 .container {
-  max-width: 1200px;
+  max-width: 1000px;
   margin: 0 auto;
   padding: 2rem;
   position: relative;
+  z-index: 1;
 }
 
-/* Glitch title effect */
+/* Title */
 h1 {
-  font-size: clamp(2rem, 5vw, 4rem);
+  font-size: clamp(2rem, 5vw, 3.5rem);
   font-weight: 800;
   text-align: center;
-  margin: 2rem 0 4rem 0;
-  background: linear-gradient(45deg, var(--accent-cyan), var(--accent-purple), var(--accent-green));
-  background-size: 300% 300%;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: gradientShift 3s ease-in-out infinite;
-  position: relative;
+  margin: 2rem 0 3rem 0;
+  color: var(--accent-cyan);
+  text-shadow: 0 0 20px var(--glow-cyan);
 }
 
-h1::before {
-  content: attr(data-text);
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(45deg, var(--accent-pink), var(--accent-orange));
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  animation: glitch 4s linear infinite;
-  z-index: -1;
-}
-
-/* Stage containers with connection lines */
+/* Stage containers - simplified */
 .stage {
-  position: relative;
-  margin: 4rem 0;
+  margin: 3rem 0;
   background: var(--bg-secondary);
-  border-radius: 20px;
+  border-radius: 16px;
   padding: 2rem;
-  border: 2px solid transparent;
-  background-clip: padding-box;
-  transition: all 0.4s ease;
-  opacity: 0;
-  transform: translateY(50px);
-  animation: slideInUp 0.8s ease-out forwards;
+  border: 1px solid rgba(0, 212, 255, 0.2);
+  transition: all 0.3s ease;
+  position: relative;
+  z-index: 2;
 }
-
-.stage:nth-child(odd) { animation-delay: 0.2s; }
-.stage:nth-child(even) { animation-delay: 0.4s; }
 
 .stage:hover {
-  transform: translateY(-10px) scale(1.02);
-  box-shadow: 0 20px 40px rgba(0, 212, 255, 0.2);
   border-color: var(--accent-cyan);
+  box-shadow: 0 8px 32px rgba(0, 212, 255, 0.1);
+  transform: translateY(-2px);
 }
 
-/* Stage headers with unique colors */
+/* Stage headers */
 .stage h3 {
-  font-size: 1.5rem !important;
+  font-size: 1.4rem;
   font-weight: 700;
-  margin: 0 0 1.5rem 0 !important;
+  margin: 0 0 1.5rem 0;
+  padding: 0.8rem 0 0.8rem 2.5rem;
   position: relative;
-  padding: 1rem 0 1rem 3rem !important;
-  transition: all 0.3s ease;
   text-transform: uppercase;
-  letter-spacing: 1px;
-  background: none !important;
-  border-radius: 0 !important;
-  box-shadow: none !important;
+  letter-spacing: 0.5px;
 }
 
-.stage:nth-child(1) h3 { 
-  color: var(--accent-cyan) !important; 
-  border-left: 4px solid var(--accent-cyan);
-}
-.stage:nth-child(2) h3 { 
-  color: var(--accent-purple) !important;
-  border-left: 4px solid var(--accent-purple);
-}
-.stage:nth-child(3) h3 { 
-  color: var(--accent-green) !important;
-  border-left: 4px solid var(--accent-green);
-}
-.stage:nth-child(4) h3 { 
-  color: var(--accent-orange) !important;
-  border-left: 4px solid var(--accent-orange);
-}
-.stage:nth-child(5) h3 { 
-  color: var(--accent-pink) !important;
-  border-left: 4px solid var(--accent-pink);
-}
-.stage:nth-child(6) h3 { 
-  color: var(--accent-cyan) !important;
-  border-left: 4px solid var(--accent-cyan);
-}
-.stage:nth-child(7) h3 { 
-  color: var(--accent-purple) !important;
-  border-left: 4px solid var(--accent-purple);
-}
+.stage:nth-child(odd) h3 { color: var(--accent-cyan); }
+.stage:nth-child(even) h3 { color: var(--accent-green); }
 
-/* Animated stage icons */
 .stage h3::before {
-  content: '⚡';
+  content: '●';
   position: absolute;
   left: 0;
   top: 50%;
   transform: translateY(-50%);
-  width: 2.5rem;
-  height: 2.5rem;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  color: currentColor;
   font-size: 1.5rem;
   animation: pulse 2s ease-in-out infinite;
-  border-radius: 50%;
-  background: rgba(255, 255, 255, 0.1);
-  border: 2px solid currentColor;
 }
 
-/* Connection lines between stages */
-.stage::after {
-  content: '';
-  position: absolute;
-  bottom: -2rem;
-  left: 50%;
-  transform: translateX(-50%);
-  width: 2px;
-  height: 2rem;
-  background: linear-gradient(to bottom, currentColor, transparent);
-  opacity: 0.5;
+@keyframes pulse {
+  0%, 100% { opacity: 1; transform: translateY(-50%) scale(1); }
+  50% { opacity: 0.6; transform: translateY(-50%) scale(1.1); }
 }
 
-.stage:last-child::after { display: none; }
-
-/* Interactive formula containers */
+/* Formula containers - fixed positioning */
 .formula-container {
-  position: relative;
-  margin: 2rem 0;
+  margin: 1.5rem 0;
   background: var(--bg-tertiary);
-  border-radius: 15px;
+  border-radius: 12px;
   padding: 1.5rem;
   border: 1px solid rgba(255, 255, 255, 0.1);
-  transition: all 0.3s ease;
-  cursor: pointer;
+  position: relative;
+  z-index: 3;
+  clear: both;
+  overflow: visible;
 }
 
 .formula-container:hover {
-  background: rgba(255, 255, 255, 0.05);
-  border-color: var(--accent-cyan);
-  box-shadow: 
-    0 0 30px var(--glow-cyan),
-    inset 0 0 30px rgba(0, 212, 255, 0.1);
-  transform: scale(1.02);
+  background: rgba(0, 212, 255, 0.05);
+  border-color: rgba(0, 212, 255, 0.3);
 }
 
 /* Formula labels */
 .formula-label {
   position: absolute;
-  top: -12px;
-  left: 20px;
+  top: -10px;
+  left: 15px;
   background: var(--accent-cyan);
   color: var(--bg-primary);
-  padding: 0.3rem 1rem;
-  border-radius: 20px;
-  font-size: 0.8rem;
+  padding: 0.2rem 0.8rem;
+  border-radius: 12px;
+  font-size: 0.75rem;
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.5px;
+  z-index: 4;
 }
 
-/* MathJax styling */
+/* MathJax styling - critical fixes */
 .MathJax_Display {
   background: transparent !important;
   border: none !important;
   padding: 1rem 0 !important;
-  margin: 0 !important;
+  margin: 1rem 0 !important;
+  position: relative !important;
+  z-index: 5 !important;
+  overflow: visible !important;
+  clear: both !important;
 }
 
 .MathJax {
   color: var(--text-primary) !important;
-  font-size: 1.1em !important;
+  font-size: 1em !important;
+  position: relative !important;
+  z-index: 5 !important;
 }
 
 /* Explanation boxes */
 .explanation {
-  background: rgba(0, 212, 255, 0.1);
-  border-left: 4px solid var(--accent-cyan);
-  padding: 1rem 1.5rem;
+  background: rgba(0, 212, 255, 0.08);
+  border-left: 3px solid var(--accent-cyan);
+  padding: 1rem 1.2rem;
   margin: 1rem 0;
-  border-radius: 0 10px 10px 0;
+  border-radius: 0 8px 8px 0;
   position: relative;
-  transition: all 0.3s ease;
-}
-
-.explanation:hover {
-  background: rgba(0, 212, 255, 0.2);
-  transform: translateX(10px);
+  z-index: 2;
 }
 
 .explanation::before {
   content: '💡';
   position: absolute;
-  left: -15px;
+  left: -12px;
   top: 50%;
   transform: translateY(-50%);
   background: var(--accent-cyan);
-  width: 30px;
-  height: 30px;
+  width: 24px;
+  height: 24px;
   border-radius: 50%;
   display: flex;
   align-items: center;
   justify-content: center;
-  font-size: 1rem;
+  font-size: 0.8rem;
 }
 
-/* Progress indicator */
+/* Text formatting */
+strong, b {
+  color: var(--accent-cyan);
+  font-weight: 700;
+  text-shadow: 0 0 8px rgba(0, 212, 255, 0.3);
+}
+
+/* Lists */
+ul, ol {
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+}
+
+li {
+  margin: 0.6rem 0;
+  color: var(--text-secondary);
+}
+
+ul li::marker {
+  color: var(--accent-cyan);
+}
+
+/* Progress bar */
 .progress-bar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  height: 4px;
+  height: 3px;
   background: var(--bg-secondary);
   z-index: 1000;
 }
 
 .progress-fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-purple));
+  background: linear-gradient(90deg, var(--accent-cyan), var(--accent-green));
   width: 0%;
   transition: width 0.3s ease;
 }
 
-/* Floating particles */
-.particle {
-  position: fixed;
-  width: 4px;
-  height: 4px;
-  background: var(--accent-cyan);
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: -1;
-  animation: float 10s linear infinite;
-}
-
-/* Markdown formatting */
-strong, b {
-  font-weight: 700;
-  color: var(--accent-cyan);
-  text-shadow: 0 0 10px rgba(0, 212, 255, 0.3);
-  transition: all 0.3s ease;
-}
-
-strong:hover, b:hover {
-  text-shadow: 0 0 15px rgba(0, 212, 255, 0.5);
-  transform: scale(1.05);
-}
-
-/* Lists */
-ul, ol {
-  padding-left: 2rem;
-  margin: 1rem 0;
-}
-
-li {
-  margin: 0.8rem 0;
-  color: var(--text-secondary);
-  position: relative;
-  transition: all 0.3s ease;
-}
-
-li:hover {
-  color: var(--text-primary);
-  transform: translateX(5px);
-}
-
-ul li::before {
-  content: '▸';
-  color: var(--accent-cyan);
-  position: absolute;
-  left: -1.5rem;
-  font-weight: bold;
-}
-
-/* Italic */
-em, i {
-  font-style: italic;
-  color: var(--accent-green);
-  text-shadow: 0 0 5px rgba(0, 255, 136, 0.2);
-}
-
-/* Inline code */
-code {
-  background: rgba(0, 212, 255, 0.1);
-  color: var(--accent-cyan);
-  padding: 0.2rem 0.6rem;
-  border-radius: 6px;
-  border: 1px solid rgba(0, 212, 255, 0.3);
-  font-family: 'Courier New', monospace;
-  font-size: 0.9em;
-  font-weight: 600;
-}
-
-/* Blockquotes */
-blockquote {
-  border-left: 4px solid var(--accent-purple);
-  background: rgba(139, 92, 246, 0.1);
-  padding: 1rem 1.5rem;
-  margin: 1.5rem 0;
-  border-radius: 0 8px 8px 0;
-  font-style: italic;
-  position: relative;
-}
-
-blockquote::before {
-  content: '"';
-  font-size: 4rem;
-  color: var(--accent-purple);
-  position: absolute;
-  top: -10px;
-  left: 10px;
-  opacity: 0.3;
-}
-
-/* Interactive hover effects */
-.stage:hover .formula-container {
-  border-color: rgba(255, 255, 255, 0.3);
-}
-
-.stage:hover h3::before {
-  animation-duration: 1s;
-}
-
-/* Custom scrollbar */
+/* Scrollbar */
 ::-webkit-scrollbar {
   width: 8px;
 }
@@ -435,24 +246,35 @@ blockquote::before {
   border-radius: 4px;
 }
 
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent-purple);
-}
-
 /* Responsive */
 @media (max-width: 768px) {
-  .container { padding: 1rem; }
-  .stage { padding: 1.5rem; margin: 2rem 0; }
-  h1 { font-size: 2.5rem; margin: 1rem 0 2rem 0; }
+  .container { 
+    padding: 1rem; 
+  }
+  
+  .stage { 
+    padding: 1.5rem; 
+    margin: 2rem 0; 
+  }
   
   .stage h3 {
-    font-size: 1.2rem !important;
-    padding: 0.8rem 0 0.8rem 2.5rem !important;
+    font-size: 1.2rem;
+    padding: 0.6rem 0 0.6rem 2rem;
   }
   
-  .stage h3::before {
-    width: 2rem;
-    height: 2rem;
-    font-size: 1.2rem;
+  .formula-container {
+    padding: 1rem;
   }
+}
+
+/* Important fixes for layering issues */
+.MathJax_SVG_Display,
+.MathJax_SVG {
+  position: static !important;
+  z-index: auto !important;
+}
+
+mjx-container {
+  position: static !important;
+  z-index: auto !important;
 }
