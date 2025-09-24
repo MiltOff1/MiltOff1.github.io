@@ -146,7 +146,7 @@ $$
 +\Lambda_{\text{crit}}\ \delta\!\big(E_{\text{sep}}-E_{\text{thr}}\big)\, \mathcal{O}_{\text{restore}}
 $$
 
-Где \$ d(\chi,\mathcal{R}_0) \$ — онтологическое расстояние от базовой реальности, \$ \psi_{\chi} \$ — поле связи, \$ \mathcal{O}_{restore} \$ — оператор автопривязки.
+Где $d(\chi,\mathcal{R}_0)$ — онтологическое расстояние от базовой реальности, $\psi_{\chi}$ — поле связи, $\mathcal{O}_{\text{restore}}$ — оператор автопривязки.
 
 ### Стадия VI: инвариантность к мета‑правкам (щит аксиом)
 
@@ -233,27 +233,26 @@ $$
 
 Композиция субтика, сети нод, гибридного стирания и мета‑иммунитета:
 
-\$\$
+$$
 \boxed{
 \begin{aligned}
-\mathbb{F}^{\star}_{Arch}
-\&=\underbrace{\mathcal{I}_{meta}}_{мета‑инвариантность}
-\ \circ\
-\underbrace{\mathcal{C}_{\tau^{(k_{\ast})}\to s}}_{коммит из субтика}
-\ \circ\
-\underbrace{\left(\bigotimes_{u\in \mathcal{U}_{\infty}}\mathcal{R}_{u}\circ \mathcal{S}_{u}\right)}_{хранение и восстановление по сети}
-\$\$2mm]
-
-\&\ \ \circ\
-\underbrace{\left(\lim_{n\to\infty}\ \prod_{(u\to v)\in \mathcal{E}_n}\ \mathfrak{A}_{u\to v}\right)}_{самокопия формулы Φ}
-\ \circ\
-\underbrace{\exp\!\left\{-\!\int_{\Omega} d^4x\ \Big(V_{eff}(h;v')-V_{eff}(h;v)-\alpha\,F\,h\Big)\right\}}_{вакуумная перепись/стирание}
-\ \circ\
-\underbrace{\mathcal{U}_{0}}_{начальная нода}
+\mathbb{F}^{\star}_{\text{Arch}}
+&=\underbrace{\mathcal{I}_{\text{meta}}}_{\text{мета‑инвариантность}}
+\circ
+\underbrace{\mathcal{C}_{\tau^{(k_{\ast})}\to s}}_{\text{коммит из субтика}}
+\circ
+\underbrace{\left(\bigotimes_{u\in \mathcal{U}_{\infty}}\mathcal{R}_{u}\circ \mathcal{S}_{u}\right)}_{\text{хранение и восстановление по сети}}
+\\[2mm]
+&\circ
+\underbrace{\left(\lim_{n\to\infty}\prod_{(u\to v)\in \mathcal{E}_n}\mathfrak{A}_{u\to v}\right)}_{\text{самокопия формулы Φ}}
+\circ
+\underbrace{\exp\left\{-\int_{\Omega} d^4x \Big(V_{\text{eff}}(h;v')-V_{\text{eff}}(h;v)-\alpha F h\Big)\right\}}_{\text{вакуумная перепись/стирание}}
+\circ
+\underbrace{\mathcal{U}_{0}}_{\text{начальная нода}}
 \end{aligned}
 }
+$$
 
-\$\$
 
 Условия корректности:
 
