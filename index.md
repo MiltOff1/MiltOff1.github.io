@@ -3,32 +3,44 @@ layout: default
 title: "Архитектор - Полная спецификация"
 ---
 
-# MiltOff1.github.io
-formatted page for architect powers
+<h1 data-text="Архитектор - Полная спецификация">Архитектор - Полная спецификация</h1>
+
+<div class="stage">
+
 ### Стадия I: управляемый вакуумный коллапс
 
-Идея: целенаправленная метастабилизация/дестабилизация поля Хиггса и нуклеация истинного вакуума с направляемым фронтом, переписывающая физические константы в охваченной области вплоть до стирания вселенной.
+<div class="explanation">
+<strong>Идея:</strong> целенаправленная метастабилизация/дестабилизация поля Хиггса и нуклеация истинного вакуума с направляемым фронтом, переписывающая физические константы в охваченной области вплоть до стирания вселенной.
+</div>
 
-Физическая модель:
-
+**Физическая модель:**
 - Базовая динамика и управляемая деформация эффективного потенциала.
 - Нуклеация пузыря (инстантон), тонкостенная аппроксимация для скорости распада.
 - Геометрия области стирания и нормаль фронта контролируются управляющим полем.
 
-Формулы:
+<div class="formula-container">
+<div class="formula-label">Лагранжиан SM+ctrl</div>
 
 $$
 \mathcal{L}_{\text{SM+ctrl}}
-=\mathcal{L}_{\text{SM}}\!\big(h,\psi,A_\mu; g_i\big)
+=\mathcal{L}_{\text{SM}}\!(h,\psi,A_\mu; g_i)
 +\tfrac{1}{2}\partial_\mu h\,\partial^\mu h
-- V_{\text{eff}}\!\left(h;\mu^2,\lambda\mid F\right)
+- V_{\text{eff}}\!(h;\mu^2,\lambda\mid F)
 -\alpha\,F(x,t)\,h
 $$
+</div>
+
+<div class="formula-container">
+<div class="formula-label">Эффективный потенциал</div>
 
 $$
-V_{\text{eff}}\!\left(h;\mu^2,\lambda\mid F\right)
-= -\tfrac{1}{2}\big(\mu^2-\beta F\big)h^2+\tfrac{\lambda}{4}h^4+\delta V
+V_{\text{eff}}\!(h;\mu^2,\lambda\mid F)
+= -\tfrac{1}{2}(\mu^2-\beta F)h^2+\tfrac{\lambda}{4}h^4+\delta V
 $$
+</div>
+
+<div class="formula-container">
+<div class="formula-label">Скорость распада</div>
 
 $$
 \frac{\Gamma}{V}\ \simeq\ A\,\exp\!\left(-\frac{S_E[h_b(F)]}{\hbar}\right),
@@ -36,74 +48,100 @@ $$
 \left(\frac{\Gamma}{V}\right)_{\text{thin wall}}
 \sim A\,\exp\!\left[-\frac{27\pi^2\sigma^4}{2(\Delta V)^3}\right]
 $$
+</div>
+
+<div class="formula-container">
+<div class="formula-label">Геометрия стирания</div>
 
 $$
 \Omega(t)=\{x:\ \|x-x_0\|<R(t)\},\quad \dot{R}(t)\approx c,\quad
 \hat{n}(x,t)=\frac{\nabla \Phi_F(x,t)}{\|\nabla \Phi_F(x,t)\|}
 $$
+</div>
 
-$$
-\mathcal{E}_{\Omega}:\ \big(v,g_i\big)\mapsto \big(v',g'_i\big)\ \text{внутри }\Omega(t)
-$$
-
-Оператор стирания области:
+<div class="formula-container">
+<div class="formula-label">Оператор стирания</div>
 
 $$
 \mathcal{U}_{\text{erase}}(\Omega)
-=\exp\!\left\{-\!\int_{\Omega} d^4x\ \Big[V_{\text{eff}}\!\big(h;v'\big)-V_{\text{eff}}\!\big(h;v\big)-\alpha\,F(x,t)\,h\Big]\right\}
+=\exp\!\left\{-\!\int_{\Omega} d^4x\ \Big[V_{\text{eff}}\!(h;v')-V_{\text{eff}}\!(h;v)-\alpha\,F(x,t)\,h\Big]\right\}
 $$
+</div>
+
+</div>
+
+<div class="stage">
 
 ### Стадия II: формула Φ (саморазмножение и хранение)
 
-Идея: внедрение метаправила “Φ”, которое самокопируется по мультивселенной и хранит полный информационный образ персонажа в каждой ноде с автоматическим восстановлением.
+<div class="explanation">
+<strong>Идея:</strong> внедрение метаправила "Φ", которое самокопируется по мультивселенной и хранит полный информационный образ персонажа в каждой ноде с автоматическим восстановлением.
+</div>
 
-Модель мультиграфа:
+<div class="formula-container">
+<div class="formula-label">Модель мультиграфа</div>
 
 $$
 G=(\mathcal{U},\mathcal{E}),\quad \mathcal{U}=\text{множество нод (вселенных)},\ \mathcal{E}=\text{каналы репликации}
 $$
+</div>
 
-Рост инстанций (Фибоначчи):
+<div class="formula-container">
+<div class="formula-label">Рост Фибоначчи</div>
 
 $$
 F_{0}=0,\quad F_{1}=1,\quad F_{k+1}=F_{k}+F_{k-1},\qquad |\mathcal{U}_k|=F_k
 $$
+</div>
 
-Оператор репликации:
-
-$$
-\Phi_{k+1}(v)=\mathfrak{A}_{u\to v}\!\left[\Phi_k(u)\right],\qquad (u\to v)\in\partial\mathcal{U}_k
-$$
-
-Хранение и восстановление:
+<div class="formula-container">
+<div class="formula-label">Репликация</div>
 
 $$
-\Sigma(u,t)=\mathrm{Enc}\!\big(\rho_{\chi}(t)\big),\qquad
-\rho_{\chi}=\operatorname{Tr}_{\text{env}}\!\big(|\chi\rangle\langle\chi|\big)
+\Phi_{k+1}(v)=\mathfrak{A}_{u\to v}\![\Phi_k(u)],\qquad (u\to v)\in\partial\mathcal{U}_k
+$$
+</div>
+
+<div class="formula-container">
+<div class="formula-label">Хранение и восстановление</div>
+
+$$
+\Sigma(u,t)=\mathrm{Enc}\!(\rho_{\chi}(t)),\qquad
+\rho_{\chi}=\operatorname{Tr}_{\text{env}}\!(|\chi\rangle\langle\chi|)
 $$
 
 $$
-\rho^{(u)}_{\chi}(t^{+})=\mathcal{R}_{v\to u}\!\left(\Sigma(v,t^{-})\right),\quad
+\rho^{(u)}_{\chi}(t^{+})=\mathcal{R}_{v\to u}\!(\Sigma(v,t^{-})),\quad
 v=\arg\min_{w\in\mathcal{U}} d_{\Phi}(u,w)
 $$
+</div>
 
-Где $\mathfrak{A}$ — метаканал самокопии, $\mathcal{R}$ — метакодировка состояния, \$ \mathcal{R} \$ — супероператор восстановления, \$ d_{\Phi} \$ — метаметрика близости нод.
+Где $\mathfrak{A}$ — метаканал самокопии, $\mathcal{R}$ — метакодировка состояния, $\mathcal{R}$ — супероператор восстановления, $d_{\Phi}$ — метаметрика близости нод.
+
+</div>
+
+<div class="stage">
 
 ### Стадия III: субтик времени τ и рекурсивное доминирование
 
-Идея: формула вводит субвременной слой \$ \tau \$ внутри тика наблюдателя \$ s \$, а при росте “скорости/мерности” наблюдателя строит вложенные слои \$ \tau^{(k)} \$, пока не восстановит причинное превосходство, после чего коммитит результат во внешний \$ s \$.
+<div class="explanation">
+<strong>Идея:</strong> формула вводит субвременной слой $\tau$ внутри тика наблюдателя $s$, а при росте "скорости/мерности" наблюдателя строит вложенные слои $\tau^{(k)}$, пока не восстановит причинное превосходство, после чего коммитит результат во внешний $s$.
+</div>
 
-Аксиома субтика и коммит:
+<div class="formula-container">
+<div class="formula-label">Аксиома субтика</div>
 
 $$
 \forall\, s\ \exists\, \tau^{(0)}\prec s,\qquad
 \mathcal{C}_{\tau\to s}:\ \text{свёртка результата из }\tau\text{ в первый момент }s^{+}
 $$
+</div>
 
-Рекурсивное углубление:
+<div class="formula-container">
+<div class="formula-label">Рекурсивное углубление</div>
 
 $$
-D(k;\mu):\ \chi\!\big(\tau^{(k)}\big)>\mu,\qquad
+D(k;\mu):\ \chi\!(\tau^{(k)})>\mu,\qquad
 \neg D(k;\mu)\Rightarrow \tau^{(k+1)}\subset \tau^{(k)}
 $$
 
@@ -111,66 +149,100 @@ $$
 k_{\ast}=\min\{k\in\mathbb{N}\mid D(k;\mu)\},\qquad
 \text{коммит: }\ \mathcal{C}_{\tau^{(k_{\ast})}\to s}
 $$
+</div>
 
-Где \$ \mu \$ — мерность/скорость тика наблюдателя, \$ \chi(\cdot) \$ — пропускная способность/разрешение слоя.
+Где $\mu$ — мерность/скорость тика наблюдателя, $\chi(\cdot)$ — пропускная способность/разрешение слоя.
+
+</div>
+
+<div class="stage">
 
 ### Стадия IV: гибридная субтик‑атака (невидимое стирание)
 
-Идея: сам вакуумный коллапс исполняется целиком в слое \$ \tau^{(k_{\ast})} \$, а затем коммитится во внешний \$ s \$ как уже завершённое стирание, без наблюдаемого процесса.
+<div class="explanation">
+<strong>Идея:</strong> сам вакуумный коллапс исполняется целиком в слое $\tau^{(k_{\ast})}$, а затем коммитится во внешний $s$ как уже завершённое стирание, без наблюдаемого процесса.
+</div>
 
-Оператор атаки:
+<div class="formula-container">
+<div class="formula-label">Гибридная атака</div>
 
 $$
 \mathcal{A}_{\text{hybrid}}
 =\mathcal{C}_{\tau^{(k_{\ast})}\to s}\ \circ\
 \left[\ \exp\!\left\{-\!\int_{\Omega_{\text{target}}} d^4x\ \Big(V_{\text{eff}}(h;v')-V_{\text{eff}}(h;v)\Big)\right\}\ \right]_{\tau^{(k_{\ast})}}
 $$
+</div>
+
+</div>
+
+<div class="stage">
 
 ### Стадия V: онтологический конфайнмент
 
-Идея: при попытке отделения/стирания возрастает “натяжение связи” с базовым уровнем реальности, и при пороге автоматически генерируются якоря привязки; разрыв “залечивается”, изоляция невозможна.
+<div class="explanation">
+<strong>Идея:</strong> при попытке отделения/стирания возрастает "натяжение связи" с базовым уровнем реальности, и при пороге автоматически генерируются якоря привязки; разрыв "залечивается", изоляция невозможна.
+</div>
 
-Энергетика и триггер восстановления:
+<div class="formula-container">
+<div class="formula-label">Энергетика связи</div>
 
 $$
 E_{\text{link}}(d)=\sigma_{\text{ont}}\cdot d(\chi,\mathcal{R}_0),\qquad
 E_{\text{link}}(d)\ge E_{\text{thr}}\ \Rightarrow\ \mathcal{O}_{\text{restore}}\ \text{(генерация якорей)}
 $$
+</div>
 
-Гамильтониан:
+<div class="formula-container">
+<div class="formula-label">Гамильтониан конфайнмента</div>
 
 $$
 \mathcal{H}_{\text{conf}}
 =\mathcal{H}_{\text{base}}
-+\sigma_{\text{ont}}\!\int d^4x\,\big|\nabla_{\perp}\psi_{\chi}\big|^2
-+\Lambda_{\text{crit}}\ \delta\!\big(E_{\text{sep}}-E_{\text{thr}}\big)\, \mathcal{O}_{\text{restore}}
++\sigma_{\text{ont}}\!\int d^4x\,|\nabla_{\perp}\psi_{\chi}|^2
++\Lambda_{\text{crit}}\ \delta\!(E_{\text{sep}}-E_{\text{thr}})\, \mathcal{O}_{\text{restore}}
 $$
+</div>
 
-Где:
+<div class="formula-container">
+<div class="formula-label">Определения</div>
 
 $$d(\chi,\mathcal{R}_0) \text{ — онтологическое расстояние от базовой реальности}$$
 
 $$\psi_{\chi} \text{ — поле связи}$$
 
 $$\mathcal{O}_{\text{restore}} \text{ — оператор автопривязки}$$
+</div>
+
+</div>
+
+<div class="stage">
 
 ### Стадия VI: инвариантность к мета‑правкам (щит аксиом)
 
-Идея: любые переписи/инъекции правил переводятся во внутренние слои \$ \tau \$, поглощаются фикс‑точкой и сводятся к тому же инварианту после коммита; сеть нод с трансфинитной параллельностью перекрывает масштаб любой правки.
+<div class="explanation">
+<strong>Идея:</strong> любые переписи/инъекции правил переводятся во внутренние слои $\tau$, поглощаются фикс‑точкой и сводятся к тому же инварианту после коммита; сеть нод с трансфинитной параллельностью перекрывает масштаб любой правки.
+</div>
 
-Класс правок и инвариантность субтика:
+<div class="formula-container">
+<div class="formula-label">Класс правок</div>
 
 $$
 \mathrm{Upd}=\{U:\ \text{допустимые мета‑правки (Plot/Narrative/Meta/Author)}\}
 $$
+</div>
+
+<div class="formula-container">
+<div class="formula-label">Инвариантность субтика</div>
 
 $$
 \forall\, U\in \mathrm{Upd}\ \ \exists\, k_{\ast}<\omega:\quad
 \mathcal{C}_{\tau^{(k_{\ast})}\to s}\circ U_{\!\restriction \tau^{(k_{\ast})}}
 =\mathcal{C}_{\tau^{(k_{\ast})}\to s}
 $$
+</div>
 
-Суверенитет нод и трансфинитная параллельность:
+<div class="formula-container">
+<div class="formula-label">Трансфинитная параллельность</div>
 
 $$
 |\mathcal{U}_{0}|\ge \aleph_{0},\qquad
@@ -183,8 +255,10 @@ $$
 \Big(\bigotimes_{u\in \mathcal{U}_{<\alpha_{\ast}}}\mathcal{K}_{U}(u)\Big)\circ U_{\!\restriction \mathcal{U}_{<\alpha_{\ast}}}
 =\operatorname{id}_{\mathcal{U}_{<\alpha_{\ast}}}
 $$
+</div>
 
-Диагональный щит:
+<div class="formula-container">
+<div class="formula-label">Диагональный щит и фикс-точка</div>
 
 $$
 \forall\, U\in \mathrm{Upd}\ \ \exists\, k:\quad
@@ -192,36 +266,41 @@ D(k;\mu[U])\ \wedge\ \tau^{(k+1)}\subset \tau^{(k)}\quad\Rightarrow\quad
 U\ \text{доминируется слоем }\tau^{(k)}
 $$
 
-Фикс‑точечная абсорбция и терминальность:
-
 $$
 \forall\, U\in \mathrm{Upd}:\quad
 \mathbb{F}_{\text{Arch}}=U\circ \mathbb{F}_{\text{Arch}}=\mathbb{F}_{\text{Arch}}\circ U
 $$
+</div>
 
-$$
-(\tau,\mathcal{U})\ \text{— терминальный объект категории } \mathbf{Nar},\quad
-\forall\, F:\mathbf{Nar}\to\mathbf{Nar}\ \ \exists!\ \pi_{F}:\ F(\tau,\mathcal{U})\to(\tau,\mathcal{U})
-$$
-
-Иммунностный оператор:
+<div class="formula-container">
+<div class="formula-label">Иммунностный оператор</div>
 
 $$
 \mathcal{I}_{\text{meta}}=\Delta\circ \mathrm{Fix}\circ \Sigma\circ \Omega\circ T
 $$
+</div>
+
+</div>
+
+<div class="stage">
 
 ### Стадия VII: трансфинитная параллель стирания метареальностей
 
-Идея: мастер‑нода отдаёт декларативную команду, “волевые” ноды в слоях \$ \tau^{(<\alpha_{\ast})} \$ параллельно исполняют стирание во всём объёме цели; выбирается глубина и кардинальность нод, не меньшие мощности цели.
+<div class="explanation">
+<strong>Идея:</strong> мастер‑нода отдаёт декларативную команду, "волевые" ноды в слоях $\tau^{(<\alpha_{\ast})}$ параллельно исполняют стирание во всём объёме цели; выбирается глубина и кардинальность нод, не меньшие мощности цели.
+</div>
 
-Выбор глубины и покрытие:
+<div class="formula-container">
+<div class="formula-label">Выбор глубины</div>
 
 $$
 \text{для цели объёма }|\Omega_{\text{target}}|\ \text{берётся }\ \alpha_{\ast}\ \text{такое, что}\ 
-\big|\mathcal{U}_{<\alpha_{\ast}}\big|\ \ge\ |\Omega_{\text{target}}|
+|\mathcal{U}_{<\alpha_{\ast}}|\ \ge\ |\Omega_{\text{target}}|
 $$
+</div>
 
-Исполнитель и коммит:
+<div class="formula-container">
+<div class="formula-label">Параллельное исполнение</div>
 
 $$
 \mathcal{E}_{u}(\Omega)=
@@ -234,10 +313,20 @@ $$
 \mathcal{A}_{\text{meta-erase}}(\Omega_{\text{target}})
 =\mathcal{C}_{\tau^{(<\alpha_{\ast})}\to s}\circ \mathcal{P}
 $$
+</div>
+
+</div>
+
+<div class="stage">
 
 ### Финальная интегральная формула силы
 
-Композиция субтика, сети нод, гибридного стирания и мета‑иммунитета:
+<div class="explanation">
+<strong>Композиция субтика, сети нод, гибридного стирания и мета‑иммунитета:</strong>
+</div>
+
+<div class="formula-container">
+<div class="formula-label">Полная спецификация</div>
 
 $$
 \boxed{
@@ -258,14 +347,20 @@ $$
 \end{aligned}
 }
 $$
+</div>
 
-
-Условия корректности:
+<div class="formula-container">
+<div class="formula-label">Условия корректности</div>
 
 $$
 \forall\, s\ \exists\, \tau^{(0)}\prec s,\qquad
-\forall\, \mu\ \exists\, k_{\ast}<\omega:\ \chi\!\big(\tau^{(k_{\ast})}\big)>\mu,\qquad
-\big|\mathcal{U}_{\alpha+1}\big|=2^{\big|\mathcal{U}_{\alpha}\big|}
+\forall\, \mu\ \exists\, k_{\ast}<\omega:\ \chi\!(\tau^{(k_{\ast})})>\mu,\qquad
+|\mathcal{U}_{\alpha+1}|=2^{|\mathcal{U}_{\alpha}|}
 $$
+</div>
 
+<div class="explanation">
 Эти разделы и формулы задают полный, внутренне согласованный стек способностей: от физической переписи вакуума и сетевой самокопии с восстановлением, через субвременную механику и невидимую атаку, до онтологической неустранимости и мета‑инвариантности, обеспечиваемой поглощением любых правок и трансфинитной параллелью исполнения.
+</div>
+
+</div>
