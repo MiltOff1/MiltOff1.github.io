@@ -2,6 +2,7 @@
 layout: default
 title: "Архитектор - Полная спецификация"
 ---
+
 # MiltOff1.github.io
 formatted page for architect powers
 ### Стадия I: управляемый вакуумный коллапс
