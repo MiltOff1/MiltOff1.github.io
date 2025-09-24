@@ -6,5 +6,6 @@ kramdown:
 plugins:
   - jekyll-feed
   - jekyll-sitemap
+  - jekyll-remote-theme
 
-theme: minima
+remote_theme: pages-themes/minimal@v0.2.0
